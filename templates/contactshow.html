@@ -1,0 +1,33 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+
+      <br><br><br>
+     <table class="table table-info container">
+       <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Message</th>
+          <th>Action</th>
+       </tr>
+
+
+    {% for y in allcontacts %}
+        <tr>
+          <td>{{ y.name }}</td>
+          <td>{{ y.email }}</td>
+          <td>{{ y.subject }}</td>
+          <td>{{ y.message }}</td>
+          <td>
+              <a href="/delete/{{ y.id }}" class="btn btn-danger">DELETE</a>
+              <a href="">EDIT</a>
+              <a href="">PAY</a>
+          </td>
+       </tr>
+    {% endfor %}
+
+     </table>
+
+{% endblock %}
